@@ -1,0 +1,14 @@
+name: ShinyJs
+title: ShinyJs
+username:
+account: maxi-galo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6529046
+bundleId: 6030449
+url: https://maxi-galo.shinyapps.io/ShinyJs/
+when: 1655868955.17604
+lastSyncTime: 1655868955.17604
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: database.txt|IrF.gif|README.md|values.txt|values.xlsx

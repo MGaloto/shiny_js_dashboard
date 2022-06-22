@@ -10,43 +10,12 @@ library(RMySQL)
 library(tidyverse)
 
 
-
-
-txt = read.delim('values.txt', header = FALSE)
-
-mysqlconnection = dbConnect(RMySQL::MySQL(),
-                            dbname = 'inflacion',
-                            host = txt$V1[1],
-                            port = as.numeric(txt$V1[2]),
-                            user = txt$V1[3],
-                            password = txt$V1[4])
-
-
-dbListTables(mysqlconnection)
-
-query = 'USE inflacion;'
-
-dbGetQuery(mysqlconnection, query)
-
-query = 'select * from inflacion_argentina'
-
-df = dbGetQuery(mysqlconnection, query)
+df = read_excel('indecnacional.xlsx')
 
 df$periodos = as.Date(df$periodos)
 
-colnames(df) = c("Nivel general" ,"Alimentos y bebidas" ,"Bebidas alcoholicas y tabaco", "Prendias y Calzado" ,         
-                    "Vivienda Agua y Elec", "Equip y Mant del Hogar" , "Salud"  , "Transporte" ,
-                    "Comunicacion" ,"Recreacion y cultura" , "Educacion" ,  "Restaurantes y hoteles" ,
-                    "Bienes y servicios varios"  ,  "periodos"    , "year"  ,   "Mes" ,"month"  )
-
-
-
-
 
 set.seed(123)
-
-
-
 
 
 

@@ -29,7 +29,7 @@ dashboardPage(
                          menuItem("Rubros",
                                   tabName = "acercade",
                                   startExpanded = F,
-                                  icon=icon("signal")
+                                  icon = icon("signal")
                                   
 # Variaciones ---------------------------------------------------------
                                   
@@ -37,7 +37,7 @@ dashboardPage(
                          menuItem("Variaciones",
                                   tabName = "vars",
                                   startExpanded = F,
-                                  icon=icon("signal")
+                                  icon = icon("signal")
                                   
 # Datos ---------------------------------------------------------
                                   
@@ -45,7 +45,7 @@ dashboardPage(
                          menuItem("Datos",
                                   tabName = "datosbase",
                                   startExpanded = F,
-                                  icon=icon("database")
+                                  icon = icon("database")
                          ),
                                   
 # Resumen ---------------------------------------------------------
@@ -56,6 +56,8 @@ dashboardPage(
                                   startExpanded = F,
                                   icon = icon("table")))),
     dashboardBody(
+        tabItems(
+          tabItem(tabName = "variation",
             fluidRow(
             valueBoxOutput("vbox"),
             valueBoxOutput("vbox2"),
@@ -71,8 +73,27 @@ dashboardPage(
                     inline = TRUE,
                     width = '600px'))),
             box(highchartOutput("chart1")),
-            box(highchartOutput("chart2"))
-            
-        )
+            box(highchartOutput("chart2")))
+            ),
+          
+          tabItem(
+            tabName = 'acercade',
+            fluidPage(
+                h1('Proporcion de Inversion por Rubro Anual'),
+                fluidRow(
+                    box(
+                        title = strong("Variacion Porcentual en Inversion por Rubro"), 
+                        solidHeader = TRUE,
+                        width = 100,
+                        p("Podemos visualizar que el Rubro que mas crecio en terminos relativos desde 1947 es el", strong("Digital")),
+                        p("Los Rubros que siguen a Digital son: ", strong("Health, Social y Educacion"), 'con un significativo incremento en la inversion en terminos relativos.'))),
+                
+                box(title = "Variaciones de Inversion desde 1947",
+                    status = "primary",
+                    solidHeader = T, 
+                    height = "550" ,
+                    width = '600'))
+            )
+          )
     )
 )
