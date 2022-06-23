@@ -2,21 +2,8 @@ dashboardPage(
     skin = "blue",
     dashboardHeader(title = "Shiny App",
                     titleWidth = 200),
-    dashboardSidebar(tags$head(tags$style(HTML('.skin-blue .main-header .navbar
-                                              {background-image: url("https://i.gifer.com/IrF.gif");
-                                               background-size: cover;}
-                                               
-                                               .skin-blue .main-header .logo {
-                                                background-image: url("https://i.gifer.com/IrF.gif");}
-                                               
-                                               .skin-blue .main-header .navbar .sidebar-toggle {
-                                                background-image: url("https://i.gifer.com/IrF.gif");}
-                                                
-                                               .a .sidebar {
-                                                background-image: url("https://i.gifer.com/IrF.gif");}
-                                                
-                                               .skin-blue .main-sidebar {
-                                                background-color: #031923;}'))), 
+    dashboardSidebar(tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
+    ), 
                      collapsed = TRUE,
                      width = 200,
                      sidebarMenu(
